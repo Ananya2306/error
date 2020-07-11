@@ -45,14 +45,17 @@ function draw(){
     if(frameCount % 1 === 0){
       var raindrop = new Drop(random(0, windowWidth), -100,10);
       raindrops.push(raindrop);
+      //raindrop.updates();
     }
 // display umbrella img
     img.display();
 // display raindrops
     for(var i = 0; i < raindrops.length; i++){
-      raindrops[i].fall(20);
+      raindrops[i].fall(10);
       raindrops[i].display();
+      raindrop.updates();
     } 
+   
 // add random img to the thunder images 1
   // By Using Switch case method
     if(frameCount % 10 === 0) {
@@ -89,6 +92,7 @@ function draw(){
             default: break;
           }
         } 
+        //console.log(updates);
   // for drawing the sprites write drawSprites at the end 
     drawSprites();
 }   
